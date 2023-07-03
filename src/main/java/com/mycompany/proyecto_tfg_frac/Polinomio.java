@@ -307,21 +307,23 @@ public class Polinomio {
          while(!g_vacio){
           f.simplificacionPolinomios();
           g.simplificacionPolinomios();
-             division = f.divisionUnivariable(g);
+          division = f.divisionUnivariable(g);
              
-             f = g;
-             g = division[1];
+          f = g;
+          g = division[1];
              
-         g_vacio = true;
+          g_vacio = true;
          if(!g.monomios.isEmpty()){
              for(Monomio m : g.monomios){
-             for( Integer i:m.m_exp ){
-                if(i != 0){
-                    g_vacio = false;
+                for( Integer i:m.m_exp ){
+                   if(i != 0){
+                       g_vacio = false;
+                   }
                 }
+             if (g_vacio = true && (m.coeficiente.get(0) != 0 || m.coeficiente.get(1) != 0 )){
+                 g_vacio = false;
+             }
             }
-            }
-
                }
          }
 
